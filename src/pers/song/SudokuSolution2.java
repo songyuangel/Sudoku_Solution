@@ -55,7 +55,6 @@ public class SudokuSolution2 {
                 }
             }
         }
-        System.out.println("startX=" + startX + ",startY=" + startY + ",endX=" + endX + ",endY=" + endY);
     }
 
     /**
@@ -75,6 +74,7 @@ public class SudokuSolution2 {
         }
         System.out.println("待求解的数独：");
         printSudoku(inputArr);
+        long startTime = System.currentTimeMillis();    //获取开始时间
         go(startX,startY,0);
         if(done){
             System.out.println("成功求解：");
@@ -83,6 +83,8 @@ public class SudokuSolution2 {
             System.out.println("未能成功求解：");
             printSudoku(currentArr);
         }
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        System.out.println("程序运行时间：" + (endTime - startTime) + "ms");    //输出程序运行时间
 
         return 0;
     }
